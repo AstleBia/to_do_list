@@ -1,6 +1,6 @@
 # TO DO LIST
 
-Uma aplicação simples de lista de tarefas desenvolvida em django, para por em prática o que estou aprendendo.
+Uma aplicação simples de lista de tarefas desenvolvida em Django, para por em prática o que estou aprendendo.
 
 ___
 
