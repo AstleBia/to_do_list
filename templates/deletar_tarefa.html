@@ -1,12 +1,19 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Excluir Tarefa</h1>
-<h3>Deseja excluir essa tarefa?</h3>
-<p>{{ object.titulo }}</p>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Confirmar</button>
-</form>
-<a href="{% url 'listar_tarefas' %}">Cancelar</a>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+            <h1 class="mb-3 text-danger">Excluir Tarefa</h1>
+            <h3 class="mb-3">Deseja realmente excluir esta tarefa?</h3>
+            <p class="fw-bold">{{ object.titulo }}</p>
+
+            <form method="post" class="d-inline">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Confirmar</button>
+            </form>
+            <a href="{% url 'listar_tarefas' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </div>
+</div>
 {% endblock content %}
