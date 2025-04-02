@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ object.titulo }}</h2>
+<p><strong>Descrição: </strong>{{ object.descricao }}</p>
+<p><strong>Status: </strong> {% if object.concluido %} Concluído {% else %} Pendente {% endif %}</p>
+<p><strong>Data de Criação: </strong> {{ obejct.data_criacao }}</p>
+{% endblock content %}

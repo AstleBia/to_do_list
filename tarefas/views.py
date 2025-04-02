@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from .models import Tarefa
 from .forms import FormTarefa
 from django.urls import reverse_lazy
@@ -26,3 +26,7 @@ class DeletarTarefa(DeleteView):
     model = Tarefa
     template_name = 'deletar_tarefa.html'
     success_url = reverse_lazy('listar_tarefas')
+
+class DetalharTarefa(DetailView):
+    model = Tarefa
+    template_name = 'detalhar_tarefa.html'
