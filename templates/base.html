@@ -8,18 +8,18 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-lg bg-primary navbar-dark">
-        <div class="container">
-            <span class="navbar-brand mb-0 h1">ToDoList</span>
-        </div>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'listar_tarefas' %}">Listar</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'criar_tarefa' %}">Criar</a>
-                </li>
-            </ul>
+        <div class="containerfluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <span class="navbar-brand mb-0 h1">ToDoList</span>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'listar_tarefas' %}">Listar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="{% url 'criar_tarefa' %}">Criar</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
     <main>
