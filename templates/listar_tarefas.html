@@ -4,9 +4,10 @@
 <h1>Tarefas</h1>
 <ul>
     {% for tarefa in tarefas %}
-        <li><a href="{% url 'detalhar_tarefa' tarefa.pk %}">{{ tarefa.titulo }}</a> - {% if tarefa.concluido %}Concluída{% else %}Pendente{% endif %}</li>
-        <a href="{% url 'editar_tarefa' tarefa.pk %}">Editar</a>
-        <a href="{% url 'deletar_tarefa' tarefa.pk %}">Excluir</a>
+        <li><strong><a href="{% url 'detalhar_tarefa' tarefa.pk %}">{{ tarefa.titulo }}</a></strong> Status: {% if tarefa.concluido %}Concluída{% else %}Pendente{% endif %}
+            <button type="button" class="btn btn-primary"><a href="{% url 'editar_tarefa' tarefa.pk %}" class="text-white">Editar</a></button>
+            <button type="button" class="btn btn-primary"><a href="{% url 'deletar_tarefa' tarefa.pk %}" class="text-white">Excluir</a></button>
+        </li>
     {% empty %}
         <li>Não há tarefas.</li>
     {% endfor %}
