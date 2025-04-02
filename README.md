@@ -28,11 +28,11 @@ ___
 ```bash
    git clone https://github.com/AstleBia/to_do_list.git
 ```
-***2. Instale o Django: ***
+**2. Instale o Django: **
 ```
   pip install django
 ```
-***3. Aplique as migrações e rode o servidor: ***
+**3. Aplique as migrações e rode o servidor: **
 ```
   python manage.py makemigrations
   python manage.py migrate
