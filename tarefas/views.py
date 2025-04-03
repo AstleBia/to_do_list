@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from .models import Tarefa
 from .forms import FormTarefa
@@ -30,3 +30,9 @@ class DeletarTarefa(DeleteView):
 class DetalharTarefa(DetailView):
     model = Tarefa
     template_name = 'detalhar_tarefa.html'
+
+def marcar_concluida(request, pk):
+    tarefa = get_object_or_404(Tarefa, pk = pk)
+    tarefa.concluido = not tarefa.concluido
+    tarefa.save()
+    return redirect ('listar_tarefas')

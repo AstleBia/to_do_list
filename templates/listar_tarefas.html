@@ -9,12 +9,22 @@
                 {% for tarefa in tarefas %}
                     <li class="list-group-item d-flex justify-content-between align-items-center">
                         <div>
-                            <strong><a href="{% url 'detalhar_tarefa' tarefa.pk %}" class="text-decoration-none">{{ tarefa.titulo }}</a></strong>
+                            <strong>
+                                <a href="{% url 'detalhar_tarefa' tarefa.pk %}" class="text-decoration-none">
+                                    {{ tarefa.titulo }}
+                                </a>
+                            </strong>
                             <span class="badge {% if tarefa.concluido %}bg-success{% else %}bg-warning{% endif %} ms-2">
                                 {% if tarefa.concluido %}Concluída{% else %}Pendente{% endif %}
                             </span>
                         </div>
                         <div>
+                            {% if not tarefa.concluido %}
+                                <form action="{% url 'marcar_concluida' tarefa.pk %}" method="post" style="display:inline;">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn btn-sm btn-success">Concluir</button>
+                                </form>
+                            {% endif %}
                             <a href="{% url 'editar_tarefa' tarefa.pk %}" class="btn btn-sm btn-primary">Editar</a>
                             <a href="{% url 'deletar_tarefa' tarefa.pk %}" class="btn btn-sm btn-danger">Excluir</a>
                         </div>
